@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <style>
+        .back{
+        background-color: blueviolet;
+        border-radius: 20%;
+        font-size: 100%;
+        font-style: normal;
+        color: white;
+        }
+        .next{
+        background-color: blueviolet;
+        border-radius: 20%;
+        font-size: 100%;  
+        color: white;
+        }
+        </style>
+    <title>
+        Drum Machine
+    </title>
+</head>
+
+<body style="text-align: center">
+    <div class="red" style="background-color: tomato;">
+        <p style="font-weight: bold;">quote:"Whatever the mind of man can conceive and believe, it can achieve"</p>
+        <p>author:"Napoleon Hill"</p>
+    </div>
+    <div class="red" style="background-color: violet">
+        <p style="font-weight: bold;">quote:"Strive not to be a success, but rather to be of value."</p>
+        <p>"author":"Albert Einstein"</p>
+    </div>
+    <div class="red">
+            <p style="font-weight: bold;">quote:"Two roads diverged in a wood, and I—I took the one less traveled by, And that has made all the difference."</p>
+            <p>"author":"Robert Frost"</p>
+        </div>
+        <div class="red">
+                <p style="font-weight: bold;">quote:"I attribute my success to this: I never gave or took any excuse."</p>
+                <p>"author":"Florence Nightingale"</p>
+            </div>
+    <div>
+        <button class="back" onclick="slides(-1)">Back</button>
+        <button class="next" onclick="slides(1)">Next</button>
+    </div>
+    <script>
+        var slideIndex = 1;
+        showsilde(slideIndex);
+        function slides(n) {
+            showsilde(slideIndex += n);
+        }
+        function currentslide(n) {
+            showsilde(slideIndex = n);
+        }
+        function showsilde(n) {
+            var slide = document.getElementsByClassName("red");
+            var i;
+            if (n > slide.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) { slideIndex = slide.length }
+            for (i = 0; i < slide.length; i++) {
+                slide[i].style.display = "none";
+            }
+            slide[slideIndex - 1].style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
